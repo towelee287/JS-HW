@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Index</title>
+</head>
+
+<body>
+	<div class="lession1">
+		<button onclick="task1()">taks 1</button>
+		<button onclick="task2()">taks 2</button>
+		<button onclick="task3()">taks 3</button>
+
+		<script>
+			function task1() {
+				var Tc = +prompt("Задайте температуру в градусах по Цельсию");
+				var Tf = (9 / 5) * Tc + 32;
+				alert("Температура по Фаренгейту: " + Tf);
+			}
+
+			function task2() {
+				var name = "Василий";
+				var admin = name;
+				alert(admin);
+			}
+
+			function task3() {
+				var a = 1000 + "108";
+				alert(a);
+			}
+
+		</script>
+	</div>
+
+	<div class="lession2">
+		<button onclick="task4()">taks 4</button><br>
+		Задания 5 и 6
+		<button onclick="alert(ask(summ))">Сложение</button>
+		<button onclick="alert(ask(sub))">Вычитание</button>
+		<button onclick="alert(ask(mult))">Умножение</button>
+		<button onclick="alert(ask(div))">Деление</button>
+		<button onClick="alert(task8())">task 8*</button>
+
+		<script>
+			function task4(a) {
+				for (i = 0; i <= 15; i++) {
+					switch (i) {
+						case 0: {
+							console.log(`a = 0`);
+							break;
+						}
+						case 1: {
+							console.log(`a = 1`);
+							break;
+						}
+						case 2: {
+							console.log(`a = 2`);
+							break;
+						}
+						case 3: {
+							console.log(`a = 3`);
+							break;
+						}
+						case 4: {
+							console.log(`a = 4`);
+							break;
+						}
+						case 5: {
+							console.log(`a = 5`);
+							break;
+						}
+						case 6: {
+							console.log(`a = 6`);
+							break;
+						}
+						case 7: {
+							console.log(`a = 7`);
+							break;
+						}
+						case 8: {
+							console.log(`a = 8`);
+							break;
+						}
+						case 9: {
+							console.log(`a = 9`);
+							break;
+						}
+						case 10: {
+							console.log(`a = 10`);
+							break;
+						}
+						case 11: {
+							console.log(`a = 11`);
+							break;
+						}
+						case 12: {
+							console.log(`a = 12`);
+							break;
+						}
+						case 13: {
+							console.log(`a = 13`);
+							break;
+						}
+						case 14: {
+							console.log(`a = 14`);
+							break;
+						}
+						case 15: {
+							console.log(`a = 15`);
+							break;
+						}
+					}
+				}
+			}
+
+			function ask(operation) {
+				var arg1 = parseInt(prompt("Введите первое число"));
+				var arg2 = parseInt(prompt("Введите второе число"));
+				return mathOperation(arg1, arg2, operation);
+			}
+
+			function mathOperation(arg1, arg2, operation) {
+
+				switch (operation) {
+					case summ: {
+						return summ(arg1, arg2);
+						break;
+					}
+					case sub: {
+						return sub(arg1, arg2);
+						break;
+					}
+					case mult: {
+						return mult(arg1, arg2);
+						break;
+					}
+					case div: {
+						return div(arg1, arg2);
+						break;
+					}
+				}
+			}
+
+			function summ(arg1, arg2) {
+				return arg1 + arg2;
+			}
+
+			function sub(arg1, arg2) {
+				return arg1 - arg2;
+			}
+
+			function mult(arg1, arg2) {
+				return arg1 * arg2;
+			}
+
+			function div(arg1, arg2) {
+				return (arg1 / arg2).toFixed(2);
+			}
+
+
+			function task8() {
+				var val = parseInt(prompt("Введите число"));
+				var pow = parseInt(prompt("Укажите степень"));
+				return power(val, pow);
+			}
+
+
+			function power(val, pow) {
+				if (pow != 1) {
+					return val *= power(val, pow - 1);
+				} else {
+					return val;
+				}
+			}
+
+		</script>
+	</div>
+
+	<div class="lession3">
+		<button onClick="les3Task1()">Lession 3 Task 1</button>
+		<script>
+			function les3Task1() {
+				let i = 2;
+				let arr = [];
+
+				while (i <= 100) {
+					let j = 2;
+					let checker = true;
+
+					checkDiv(checker, j, i, arr);
+
+					i++;
+				}
+				console.log(arr);
+			}
+
+
+
+			function checkDiv(checker, j, i, arr) {
+				while (j < i) {
+					if (!(i % j)) {
+						checker = false;
+						break;
+					}
+					j++;
+				}
+				if (checker) {
+					arr.push(i);
+				}
+			}
+
+		</script>
+	</div>
+
+</body>
+
+</html>
